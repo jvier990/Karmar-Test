@@ -6,7 +6,7 @@ class ApiMeal:
         self.base_url = base_url
 
 
-    def get_meals(self, by,value):
+    def get_meals(self,by,value):
         url = f"{self.base_url}{by}{value}"
         print(url)
         response = requests.get(url)

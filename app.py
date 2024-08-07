@@ -9,6 +9,7 @@ from Helpers.getCategoriesList import mapperCategoriestoZoho, create_category_js
 import json
 from dotenv import load_dotenv
 load_dotenv()
+
 #CARGAR VARIABLES DE ENTORNO
 refresh_token = os.getenv('REFRESH_TOKEN')
 client_id = os.getenv('CLIENT_ID')
