@@ -5,24 +5,15 @@ def create_meal_objects(meal_data_str):
     meal_list = []
     
     try:
-        # Convierte la cadena JSON a una lista de diccionarios
         meal_data = json.loads(meal_data_str)
         
-        # Itera sobre cada diccionario en la lista principal
         for item in meal_data:
-            # Verifica que el item tenga la clave 'meals'
             if isinstance(item, dict) and 'meals' in item:
                 meals = item['meals']
-                
-                # Verifica que 'meals' es una lista
                 if isinstance(meals, list):
                     for meal_info in meals:
-                        # Asegúrate de que `meal_info` es un diccionario
                         if isinstance(meal_info, dict):
-                            # Imprime el diccionario para depuración
-                            print(f"Processing meal_info: {meal_info}")
-                            
-                            # Crea el objeto Meal con los datos del diccionario
+                            #print(f"Processing meal_info: {meal_info}")
                             meal = Meal(
                                 idMeal=meal_info.get('idMeal'),
                                 strMeal=meal_info.get('strMeal'),

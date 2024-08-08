@@ -8,7 +8,7 @@ class ApiMeal:
 
     def get_meals(self,by,value):
         url = f"{self.base_url}{by}{value}"
-        print(url)
+        #print(url)
         response = requests.get(url)
         if response.status_code == 200:
             return response.json()

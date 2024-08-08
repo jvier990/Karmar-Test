@@ -43,20 +43,16 @@ class ApiZoho:
         headers = {
             'Authorization': f'Zoho-oauthtoken {self.auth_token}',
             'environment': self.environment,
-            'Content-Type': 'application/json'  # Asegúrate de especificar que el contenido es JSON
+            'Content-Type': 'application/json' 
         }
 
-        # Convierte el dict a JSON si no está ya en formato JSON
+       
         if isinstance(meal_data, dict):
             meal_data = json.dumps(meal_data)
 
         try:
-            # Realiza la solicitud POST
             response = requests.post(url, headers=headers, data=meal_data)
-            response.raise_for_status()  # Verifica si hubo un error en la respuesta
-
-            # Devuelve la respuesta JSON si fue exitosa
-            print('EXITOOOO')
+            response.raise_for_status()  
             return response.json()
         except requests.RequestException as e:
             print(f"Error al hacer la solicitud POST: {e}")
@@ -67,21 +63,16 @@ class ApiZoho:
         headers = {
             'Authorization': f'Zoho-oauthtoken {self.auth_token}',
             'environment': self.environment,
-            'Content-Type': 'application/json'  # Asegúrate de especificar que el contenido es JSON
+            'Content-Type': 'application/json'
         }
 
-
-        # Convierte el dict a JSON si no está ya en formato JSON
         if isinstance(categorie_data, dict):
             categorie_data = json.dumps(categorie_data)
 
         try:
-            # Realiza la solicitud POST
             response = requests.post(url, headers=headers, data=categorie_data)
-            response.raise_for_status()  # Verifica si hubo un error en la respuesta
-
-            # Devuelve la respuesta JSON si fue exitosa
-            print('EXITOOOO')
+            response.raise_for_status()  
+            
             return response.json()
         except requests.RequestException as e:
             print(f"Error al hacer la solicitud POST: {e}")
